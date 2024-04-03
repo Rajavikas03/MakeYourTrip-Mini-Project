@@ -46,7 +46,7 @@
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password" id="password">
+                    <input type="password" class="input-field" placeholder="Password" id="passwordd">
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
@@ -76,20 +76,20 @@
 
                 <div class="two-forms">
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Firstname" id="Firstname">
+                        <input type="text" class="input-field" placeholder="User Name" id="Username">
                         <i class="bx bx-user"></i>
                     </div>
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <input type="text" class="input-field" placeholder="Lastname" id="Lastname">
-                        <i class="bx bx-user"></i>
-                    </div>
+                        <i class="bx bx-xuser"></i>
+                    </div> -->
                 </div>
                 <div class="input-box">
                     <input type="text" class="input-field" placeholder="Email" id="emaill">
                     <i class="bx bx-envelope"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password" id="pass">
+                    <input type="password" class="input-field" placeholder="Password" id="password">
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
@@ -154,6 +154,8 @@
         }
 
     </script>
+
+
     <!-- Login Button function -->
     <script type="module">
         // Import the functions you need from the SDKs you need
@@ -176,70 +178,37 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
+        const dbref = ref(db);
 
-        document.getElementById("sign-up").addEventListener('click', loginUser());
-        document.getElementById("sign-In").addEventListener('click', addUser());
-
-
-
-        function loginUser() {
-            // e.preventDefault();
+        document.getElementById("sign-In").addEventListener('click', function (e) {
+            e.preventDefault();
             const emailInput = document.getElementById("email");
+            const email = emailInput.value;
+            const username = email.split("@")[0].toUpperCase();
             const passwordInput = document.getElementById("password");
 
-            if (emailInput.value !== "" && passwordInput.value !== "") {
-                const email = emailInput.value;
-                const password = passwordInput.value;
-                const username = email.split("@")[0].toUpperCase();
-                console.log("Username:", username);
-                console.log("Email:", email);
-                console.log("Password:", password);
+            get(child(dbref, 'MordernToolsUsers/' + username)).then((snapshot) => {
 
-                set(ref(db, 'MakeYourTripUsers/' + username), {
-                    email: email,
-                    password: password,
-                }).then(() => {
-                    console.log("Data successfully set on Firebase");
+                if (snapshot) {
+                    console.log("Successfully logged in");
                     window.location.href = "index.html";
-                }).catch(error => {
-                    console.error("Error setting data:", error);
-                });
-            } else {
-                console.log("Email or password input element not found.");
-            }
-        }
-        function addUser() {
-            // e.preventDefault();
-            const Firstname = document.getElementById("Firstname");
-            const Lastname = document.getElementById("Lastname");
-            const email = document.getElementById("emaill");
-            const password = document.getElementById("pass");
-            if (email && password && Firstname && Lastname) {
-                set(ref(db, 'user/' + Firstname + Lastname), {
-                    email: email.value,
-                    firstname: Firstname.value,
-                    lastname: Lastname.value,
-                    password: password.value,
-                }).then(() => {
-                    console.log("Data successfully set on Firebase");
-                    window.location.href = "index.html";
-                }).catch(error => {
-                    console.error("Error setting data:", error);
-                });
-            } else {
-                console.log("Email or password input element not found.");
-            }
-        }
+                } else {
+                    alert("Incorrect email or password  !!!");
+                }
+            }).catch(error => {
+                console.error("Error in sign-in:", error);
+            });
+        });
     </script>
 
 
 
 
     <!-- Register button  -->
-    <!-- <script type="module">
+    <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getDatabase, get, ref, set, child, updte, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+        import { getDatabase, get, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
         // TODO: Add SDKs for Firebase products that you want to use
 
 
@@ -258,37 +227,29 @@
         // Initialize Firebase
         const appp = initializeApp(firebaseConfigg);
         const dbb = getDatabase(appp);
-        document.getElementById("sign-up").addEventListener('click', addUser());
-
-
-
-
-
-
-        function addUser() {
+        document.getElementById("sign-up").addEventListener('click', function (e) {
             e.preventDefault();
-            const Firstname = document.getElementById("Firstname");
-            const Lastname = document.getElementById("Lastname");
+            const user = document.getElementById("username");
             const email = document.getElementById("emaill");
-            const password = document.getElementById("pass");
-            if (email && password && Firstname && Lastname) {
-                set(ref(dbb, 'user/' + Firstname + Lastname), {
+            const password = document.getElementById("passwordd");
+            if (email.value !== "" && password.value !== "" && user.value !== "") {
+                set(ref(dbb, 'MordernToolsUsers/' + user.value), {
                     email: email.value,
-                    firstname: Firstname.value,
-                    lastname: Lastname.value,
                     password: password.value,
                 }).then(() => {
                     console.log("Data successfully set on Firebase");
                     window.location.href = "index.html";
+
+
+
                 }).catch(error => {
                     console.error("Error setting data:", error);
                 });
             } else {
-                console.log("Email or password input element not found.");
+                console.error("Email or password input element not found.");
             }
-        }
-
-    </script> -->
+        });
+    </script>
 
 
 
