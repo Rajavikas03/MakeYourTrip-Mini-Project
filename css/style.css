@@ -1,0 +1,322 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-icon {
+  display: none;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+}
+
+.navigation ul li {
+  margin-right: 20px;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+  color: #007bff;
+}
+
+/* Hero Section */
+.section-hero {
+  background-color: #007bff;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* Search Section */
+.section-search {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.section-search h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.custom-select .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+ 
+/* Search Section */
+.section-search {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.section-search h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.custom-select .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* About Section */
+.section-about {
+  padding: 100px 0;
+}
+
+.about-box__heading h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.about-box__content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Tours Section */
+.section-tours {
+  padding: 100px 0;
+}
+
+.tour-box__cards{
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+
+.tour-box__heading h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.tour-box__heading p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.t-card {
+  margin-bottom: 30px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.t-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.t-card__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.t-card__content {
+  padding: 20px;
+}
+
+.t-card__title {
+  margin-bottom: 10px;
+}
+
+.t-card__title h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.t-card__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.t-card__items div {
+  display: flex;
+  align-items: center;
+}
+
+.t-card__items .likes {
+  color: #333;
+}
+
+.t-card__items .likes img {
+  margin-right: 5px;
+}
+
+/* Offer Section */
+.section-offer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.offer-box__percentage {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.offer-box__content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Review Section */
+.section-review {
+  padding: 100px 0;
+}
+
+.review-header h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.review-header h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.review-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.r-card {
+  padding: 20px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.r-card__img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.r-card__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.r-card__description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.r-card__rating img {
+  margin: 0 auto;
+}

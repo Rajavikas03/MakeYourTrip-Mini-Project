@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Website</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tourist Website information Guide</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to our Tourist Website</h2>
+        <p>This is a place where you can find information about various tourist destinations.</p>
+        <div id="searchResults"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tourist Website. All rights reserved.</p>
+    </footer>
+
+
+    <!-- <script src="./search.js"></script> -->
+    <script>
+        const searchResults = document.getElementById('searchResults');
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const destination = urlParams.get('destination');
+        const days = urlParams.get('days');
+        const averagePrice = urlParams.get('averagePrice');
+
+        console.log(destination)
+        if (destination && days && averagePrice) {
+            const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: ${destination}</p>
+                <p>Number of Days: ${days}</p>
+                <p>Average Price: ₹${averagePrice}</p>
+            `;
+            searchResults.innerHTML = resultHTML;
+        } else {
+            searchResults.innerHTML = '<p>No search results found.</p>';
+        }
+    </script>
+    <link rel="html" href="./index2.html">
+</body>
+
+</html>
