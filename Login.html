@@ -157,7 +157,7 @@
 
 
     <!-- Login Button function -->
-    <script type="module">
+    <!-- <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
         import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
@@ -167,7 +167,7 @@
         const firebaseConfig = {
             apiKey: "AIzaSyCCg3GmareRAmEvjoHI7Brbd6_tE7HIziA",
             authDomain: "mordern-tools.firebaseapp.com",
-            databaseURL: "https://mordern-tools-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            databaseURL: "https://mordern-tools-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "mordern-tools",
             storageBucket: "mordern-tools.appspot.com",
             messagingSenderId: "820472292829",
@@ -187,9 +187,9 @@
             const username = email.split("@")[0].toUpperCase();
             const passwordInput = document.getElementById("password");
 
-            get(child(dbref, 'MordernToolsUsers/' + username)).then((snapshot) => {
+            get(child(dbref, 'MakeYourTripUsers/' + username)).then((snapshot) => {
 
-                if (snapshot) {
+                if (snapshot !== "") {
                     console.log("Successfully logged in");
                     window.location.href = "index.html";
                 } else {
@@ -199,45 +199,44 @@
                 console.error("Error in sign-in:", error);
             });
         });
-    </script>
+    </script> -->
 
 
 
 
     <!-- Register button  -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getDatabase, get, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-
-
-
-        // Your web app's Firebase configuration
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
         const firebaseConfigg = {
-            apiKey: "AIzaSyCCg3GmareRAmEvjoHI7Brbd6_tE7HIziA",
-            authDomain: "mordern-tools.firebaseapp.com",
-            databaseURL: "https://mordern-tools-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "mordern-tools",
-            storageBucket: "mordern-tools.appspot.com",
-            messagingSenderId: "820472292829",
-            appId: "1:820472292829:web:fa73fcb9620f9e7fab0234"
+            apiKey: "AIzaSyCt5PMHdbgsRpGeKSAgrlMeFZthR8jpRE0",
+            authDomain: "makeyourtrip-a355f.firebaseapp.com",
+            projectId: "makeyourtrip-a355f",
+            storageBucket: "makeyourtrip-a355f.appspot.com",
+            databaseURL: "https:makeyourtrip-a355f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            messagingSenderId: "298588605785",
+            appId: "1:298588605785:web:8a3997b0c3b46e1e0f5048",
+            measurementId: "G-6R5GMQD3GP"
         };
 
         // Initialize Firebase
-        const appp = initializeApp(firebaseConfigg);
-        const dbb = getDatabase(appp);
+        const ap = initializeApp(firebaseConfigg);
+        const analytics = getAnalytics(ap);
+        const dbb = getDatabase(ap);
         document.getElementById("sign-up").addEventListener('click', function (e) {
             e.preventDefault();
             const user = document.getElementById("username");
             const email = document.getElementById("emaill");
+            const username = email.split("@")[0].toUpperCase();
             const password = document.getElementById("passwordd");
             if (email.value !== "" && password.value !== "" && user.value !== "") {
-                set(ref(dbb, 'MordernToolsUsers/' + user.value), {
+                set(ref(dbb, 'MakeYourTripUsers/' + username), {
                     email: email.value,
+                    username: user.value,
                     password: password.value,
                 }).then(() => {
-                    console.log("Data successfully set on Firebase");
+                    alert("Data successfully set on Firebase");
                     window.location.href = "index.html";
 
 
@@ -249,7 +248,7 @@
                 console.error("Email or password input element not found.");
             }
         });
-    </script>
+    </script> -->
 
 
 
@@ -259,3 +258,30 @@
 </body>
 
 </html>
+
+
+
+
+<!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCt5PMHdbgsRpGeKSAgrlMeFZthR8jpRE0",
+      authDomain: "makeyourtrip-a355f.firebaseapp.com",
+      projectId: "makeyourtrip-a355f",
+      storageBucket: "makeyourtrip-a355f.appspot.com",
+      messagingSenderId: "298588605785",
+      appId: "1:298588605785:web:8a3997b0c3b46e1e0f5048",
+      measurementId: "G-6R5GMQD3GP"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script> -->
