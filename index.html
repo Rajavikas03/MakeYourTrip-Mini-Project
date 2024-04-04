@@ -127,9 +127,9 @@
             <span class="arrow"></span>
           </div>
         </div>
-        <a href="./index2.html">
-          <button class="btn" id="searchBtn" onclick="passSelectedOption()" style="margin: 10px;">Search</button>
-        </a>
+        <!-- <a href="./index2.html">
+          <button class="btn" id="searchBtn" onclick="passSelectedOption1()" style="margin: 10px;">Search</button>
+        </a> -->
 
       </div>
     </section>
@@ -322,20 +322,29 @@
 
   <!-- SCRIPT -->
   <script>
-    function passSelectedOption() {
-      const destination = document.querySelector(".destination").value;
-      const days = document.querySelector(".days").value;
-      const averagePrice = document.querySelector(".average-price").value;
+    const destinationSelect = document.querySelector(".destination");
+    const daysSelect = document.querySelector(".days");
+    const averagePriceSelect = document.querySelector(".average-price");
 
+    // Add event listeners to the select elements
+    destinationSelect.addEventListener("change", passSelectedOption);
+    daysSelect.addEventListener("change", passSelectedOption);
+    averagePriceSelect.addEventListener("change", passSelectedOption);
+
+    function passSelectedOption() {
+      const destination = destinationSelect.value;
+      const days = daysSelect.value;
+      const averagePrice = averagePriceSelect.value;
+      console.log(`Destination: ${destination}, Days: ${days}, Average Price: ${averagePrice}`);
       const queryParams = new URLSearchParams({
         destination,
         days,
         averagePrice,
-      }).toString();
-
+      });
       window.location.href = `index2.html?${queryParams}`;
     }
   </script>
+
   <script src="./search.js"></script>
 </body>
 

@@ -64,6 +64,9 @@
         <h2>Welcome to our Tourist Website</h2>
         <p>This is a place where you can find information about various tourist destinations.</p>
         <div id="searchResults"></div>
+        <div resultHTML>
+
+        </div>
     </section>
 
     <footer>
@@ -73,26 +76,144 @@
 
     <!-- <script src="./search.js"></script> -->
     <script>
+        // JavaScript code to retrieve query parameters and display them
         const searchResults = document.getElementById('searchResults');
         const urlParams = new URLSearchParams(window.location.search);
 
-        const destination = urlParams.get('destination');
-        const days = urlParams.get('days');
-        const averagePrice = urlParams.get('averagePrice');
+        const destination = urlParams.get('destination') ?? "N/A";
+        const days = urlParams.get('days') ?? "N/A";
+        const averagePrice = urlParams.get('averagePrice') ?? "N/A";
+        console.log(`Destination: ${destination}, Days: ${days}, Average Price: ${averagePrice}`);
 
-        console.log(destination)
-        if (destination && days && averagePrice) {
-            const resultHTML = `
+        if (destination !== "" && days !== "" && averagePrice !== "") {
+            // const resultHTML = `
+            //     <h3>Search Results:</h3>
+            //     <p>Destination: ${destination}</p>
+            //     <p>Number of Days: ${days}</p>
+            //     <p>Average Price: ₹${averagePrice}</p>
+            // `;
+            // searchResults.innerHTML = resultHTML;
+            // thanjavur
+            if (destination === "Thanjavur") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/Thanjavur.jpg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // chennai
+            else if (destination === "Chennai") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/chennai.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // madurai
+            else if (destination === "Madurai") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/madurai.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // pondicherry
+            else if (destination === "Pondicherry") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/pondicherry.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // dindigul
+            else if (destination === "Dindigul") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/dindugal.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // nilgiris
+            else if (destination === "Nilgiris") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/niligiris.webp" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // ramanathapuram
+            else if (destination === "Ramanathapuram") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/Ramanathapuram.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+            // kanchipuram
+            else if (destination === "Kanchipuram") {
+                const resultHTML = `
+                <h3>Search Results:</h3>
+                <p>Destination: <b>${destination}</b></p>
+                <p>Number of Days: <b>${days}</b></p>
+                <p>Average Price: <b>₹${averagePrice}</b></p>
+                <img src="./img/Kanchipuram.jpeg" alt="england" width="500" height="500" class="t-card__img" style="margin-bottom: 80px;">
+                <br></br>
+            `;
+                searchResults.innerHTML = resultHTML;
+
+            }
+
+            else {
+                const resultHTML = `
                 <h3>Search Results:</h3>
                 <p>Destination: ${destination}</p>
                 <p>Number of Days: ${days}</p>
                 <p>Average Price: ₹${averagePrice}</p>
             `;
-            searchResults.innerHTML = resultHTML;
+                searchResults.innerHTML = resultHTML;
+
+            }
         } else {
             searchResults.innerHTML = '<p>No search results found.</p>';
+            console.log("No search results found.");
         }
     </script>
+
     <link rel="html" href="./index2.html">
 </body>
 
