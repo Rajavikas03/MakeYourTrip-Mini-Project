@@ -2,350 +2,169 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Turismo reponsive website build using HTML5, CSS3 and Javascript. The complete layout of the page is build using grid layout and flexbox with some cool animations" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-  <link rel="stylesheet" href="font/stylesheet.css" media="screen" />
-  <link rel="stylesheet" href="css/style.css" media="screen" />
-  <title>Make Your Trip</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Modern Login Page | AsmrProg</title>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="navigation">
-        <div class="logo">Make Your Trip</div>
-        <img src="img/nav-icon.svg" class="nav-icon" alt="navigation icon" width="30" height="30" />
-        <ul>
-          <li><a href="Login.html" class="link active">Login</a></li>
-          <li>
-            <a href="#about"> About </a>
-          </li>
-          <li>
-            <a href="#tours"> Tours </a>
-          </li>
-          <li>
-            <a href="#offers"> Offers </a>
-          </li>
-          <li>
-            <button class="btn" id="book_now">Book Now</button>
-          </li>
-
-          <!-- <li><a href="#home" class="link " id="homebut" onclick="changeBackround()">Home</a></li>
-          <li><a href="#offers" class="link">Tours</a></li>
-          <li><a href="#about" class="link">About</a></li> -->
-        </ul>
-      </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="" method="post">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name" required id="username" />
+                <input type="email" placeholder="Email" required id="emaill" />
+                <input type=" password" placeholder="Password" required id="passwordd" />
+                <button id="sign-up">Sign Up</button>
+            </form>
+            <?php  }?>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password">
+                <a href="https://mordern-tools-default-rtdb.asia-southeast1.firebasedatabase.app/">Forget Your
+                    Password?</a>
+                <button id="sign-in">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <!-- SECTION HERO -->
-    <section class="section-hero" style="background-color: #007bff;">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="heading heading--1 margin-bottom">
-            Life is short and the world is wide; the sooner you start exploring it, the better.
-          </h1>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION SEARCH -->
-    <section class="section-search">
-      <div class="container search-box">
-        <!-- Destination -->
-        <div class="wrapper">
-          <h3>Destination</h3>
-          <div class="custom-select">
-            <select class="destination">
-              <option value="Chennai">Chennai</option>
-              <option value="Madurai">Madurai</option>
-              <option value="Thanjavur">Thanjavur</option>
-              <option value="Pondicherry">Pondicherry</option>
-              <!-- Dindigul -->
-              <option value="Dindigul">Dindigul</option>
-              <!-- Nilgiris -->
-              <option value="Nilgiris">Nilgiris</option>
-              <!-- Ramanathapuram  -->
-              <option value="Ramanathapuram">Ramanathapuram</option>
-              <!-- Kanchipuram -->
-              <option value="Kanchipuram">Kanchipuram</option>
-
-            </select>
-            <span class="arrow"></span>
-          </div>
-        </div>
-
-        <!-- Number of Days -->
-        <div class="wrapper">
-          <h3>Number of Days</h3>
-          <div class="custom-select">
-            <select class="days">
-              <option value="1">1 Day</option>
-              <option value="2">2 Days</option>
-              <option value="3">3 Days</option>
-              <option value="4">4 Days</option>
-              <option value="5">5 Days</option>
-              <option value="6">6 Days</option>
-              <option value="1 week">1 Week</option>
-              <option value="2 week">2 Week</option>
-              <option value="3 week">3 Week</option>
-              <option value="1 month">1 Month</option>
-            </select>
-            <span class="arrow"></span>
-          </div>
-        </div>
-
-        <!-- Average Price -->
-        <div class="wrapper">
-          <h3>Average Price</h3>
-          <div class="custom-select">
-            <!-- <br></br> -->
-            <select class="average-price">
-              <!-- ₹500 -->
-              <!-- <br></br> -->
-              <option value="200">₹500 - ₹1000</option>
-              <option value="500">₹1k - ₹2k</option>
-              <option value="1000">₹2k - ₹3k</option>
-              <option value="1000">₹3k - ₹4k</option>
-              <option value="1000">₹4k - ₹5k</option>
-              <option value="1000">₹5k - ₹6k</option>
-              <option value="1000">₹6k - ₹7k</option>
-              <option value="1000">₹7k - ₹8k</option>
-              <option value="1000">₹8k - ₹9k</option>
-              <option value="1000">₹9k - ₹10k</option>
-              <option value="1000">₹10k - ₹20k</option>
-              <option value="1000">₹20k - ₹40k</option>
-              <option value="1000">₹40k - ₹80k</option>
-              <option value="1000">₹80k - ₹1Lac</option>
-            </select>
-            <span class="arrow"></span>
-          </div>
-        </div>
-        <!-- <a href="./index2.html">
-          <button class="btn" id="searchBtn" onclick="passSelectedOption1()" style="margin: 10px;">Search</button>
-        </a> -->
-
-      </div>
-    </section>
-
-    <!-- SECTION ABOUT -->
-    <section class="section-about" id="about">
-      <div class="container about-box" data-aos="fade-up">
-        <div class="about-box__heading">
-          <h3 class="color-blue margin-bottom">About us</h3>
-          <div class="heading heading--1 capitalize">
-            Explore all corners of the Tamil nadu with us
-          </div>
-        </div>
-        <div class="about-box__content">
-          <p class="margin-bottom">
-            Tamil Nadu, a vibrant state in southern India, boasts rich cultural heritage, majestic temples, serene hill
-            stations, and pristine beaches, offering a diverse and enchanting experience for tourists
-          </p>
-          <button class="btn btn--secondary">Read More</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION TOURS -->
-    <section class="section-tours" id="tours">
-      <div class="container tour-box" data-aos="fade-up">
-        <header class="tour-box__heading">
-          <h2 class="heading heading--2 color-blue margin-bottom">
-            our top tours
-          </h2>
-          <p>
-            Experience the Best of Tamil Nadu
-          </p>
-        </header>
-
-        <article class="tour-box__cards">
-          <div class="t-card" data-aos="flip-left" data-aos-duration="1000">
-            <img src="./img/Thanjavur.jpg" alt="england" width="500" height="500" class="t-card__img" />
-
-            <div class="t-card__content">
-              <div class="t-card__title">
-                <h3 class="name">Thanjavur</h3>
-                <p class="price">1000</p>
-              </div>
-
-              <div class="t-card__items">
-                <div class="days">5 Days</div>
-                <div class="likes">
-                  <img src="img/heart.svg" alt="heart" width="20" height="20" />
-                  4.9k
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="t-card" data-aos="flip-left" data-aos-duration="1000">
-            <img src="./img/Thanjavur.jpg" alt="Thanjavur" width="500" height="500" class="t-card__img" />
-
-            <div class="t-card__content">
-              <div class="t-card__title">
-                <h3 class="name">Thanjavur</h3>
-                <p class="price">1000</p>
-              </div>
-
-              <div class="t-card__items">
-                <div class="days">5 Days</div>
-                <div class="likes">
-                  <img src="img/heart.svg" alt="heart" width="20" height="20" />
-                  4.9k
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="t-card" data-aos="flip-left" data-aos-duration="1000">
-            <img src="./img/Thanjavur.jpg" alt="england" width="500" height="500" class="t-card__img" />
-
-            <div class="t-card__content">
-              <div class="t-card__title">
-                <h3 class="name">Thanjavur</h3>
-                <p class="price">1000</p>
-              </div>
-
-              <div class="t-card__items">
-                <div class="days">5 Days</div>
-                <div class="likes">
-                  <img src="img/heart.svg" alt="heart" width="20" height="20" />
-                  4.9k
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="t-card" data-aos="flip-left" data-aos-duration="1000">
-            <img src="./img/mahabalipuram.jpg" alt="france" width="500" height="500" class="t-card__img" />
-
-            <div class="t-card__content">
-              <div class="t-card__title">
-                <h3 class="name">Mahabalipuram</h3>
-                <p class="price">500</p>
-              </div>
 
 
 
-              <div class="t-card__items">
-                <div class="days">1 Days</div>
-                <div class="likes">
-                  <img src="img/heart.svg" alt="heart" width="20" height="20" />
-                  4.9k
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+    <script src="login.js"></script>
 
-    <!-- SECTION OFFER -->
-    <section class="section-offer" id="offers">
-      <div class="container offer-box">
-        <div class="offer-box__percentage" data-aos="zoom-in">50%</div>
-        <div class="offer-box__content" data-aos="fade-up">
-          <h2 class="heading heading--2">
-            Special Offer for <b>hindu college</b> Students
-          </h2>
-          <button class="btn">book Now</button>
-        </div>
-      </div>
-    </section>
 
-    <!-- SECTION REVIEW -->
-    <section class="section-review">
-      <div class="container review-box" data-aos="fade-up">
-        <header class="review-header">
-          <h3 class="color-blue">Our Reviews</h3>
-          <h2 class="heading heading--2">What the people say about us</h2>
-        </header>
 
-        <article class="review-cards">
-          <div class="r-card">
-            <img src="./img/Karthi.jpeg" alt="Karthi" class="r-card__img" width="90" height="90" />
-            <div class="r-card__name">Karthi</div>
-            <span class="quot">&#8223;</span>
-            <div class="r-card__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              vitae.
-            </div>
-            <div class="r-card__rating">
-              <img src="img/star-grp.svg" alt="star" width="100" height="30" />
-            </div>
-          </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 
-          <div class="r-card">
-            <img src="./img/Gokul.jpeg" alt="" class="r-card__img" width="90" height="90" />
-            <div class="r-card__name">Gokul</div>
-            <span class="quot">&#8223;</span>
-            <div class="r-card__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              vitae.
-            </div>
-            <div class="r-card__rating">
-              <img src="img/star-grp.svg" alt="star" width="100" height="30" />
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
 
-  <!-- SECTION FOOTER -->
-  <footer class="section-footer">
-    <div class="footer-box container">
-      <div class="contact-details">
-        <h2 class="heading heading--2 margin-bottom">Tourism</h2>
-        <ul class="contact-data">
-          <li class="location">Chennai</li>
-          <li class="phone">+91 9025447295</li>
-          <li class="email">Tourism@domine.com</li>
-        </ul>
-      </div>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCt5PMHdbgsRpGeKSAgrlMeFZthR8jpRE0",
+            authDomain: "makeyourtrip-a355f.firebaseapp.com",
+            projectId: "makeyourtrip-a355f",
+            databaseURL: "https://makeyourtrip-a355f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            storageBucket: "makeyourtrip-a355f.appspot.com",
+            messagingSenderId: "298588605785",
+            appId: "1:298588605785:web:8a3997b0c3b46e1e0f5048",
+            measurementId: "G-6R5GMQD3GP"
+        };
 
-      <div class="legel">
-        <p class="text">Copyright &copy; by Karthi&nbsp;</p>
-        <a href="https://github.com/Manoranjan-D/responsive-website-tourism">
-          <img src="img/github.svg" alt="github" class="github" width="35" height="35" />
-        </a>
-      </div>
-    </div>
-  </footer>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
 
-  <!-- SCRIPT -->
-  <script>
-    const destinationSelect = document.querySelector(".destination");
-    const daysSelect = document.querySelector(".days");
-    const averagePriceSelect = document.querySelector(".average-price");
+        document.getElementById("sign-in").addEventListener('click', function (e) {
+            e.preventDefault();
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value;
+            const username = email.split("@")[0].toUpperCase();
+            const passwordInput = document.getElementById("password");
+            const dbref = ref(db);
+            get(child(dbref, 'MordernToolsUsers/' + username)).then((snapshot) => {
 
-    // Add event listeners to the select elements
-    destinationSelect.addEventListener("change", passSelectedOption);
-    daysSelect.addEventListener("change", passSelectedOption);
-    averagePriceSelect.addEventListener("change", passSelectedOption);
+                if (snapshot) {
+                    console.log("Successfully logged in");
+                    window.location.href = "home.html";
+                } else {
+                    alert("Incorrect email or password  !!!");
+                }
+            }).catch(error => {
+                console.error("Error in sign-in:", error);
+            });
+        });
+    </script>
 
-    function passSelectedOption() {
-      const destination = destinationSelect.value;
-      const days = daysSelect.value;
-      const averagePrice = averagePriceSelect.value;
-      console.log(`Destination: ${destination}, Days: ${days}, Average Price: ${averagePrice}`);
-      const queryParams = new URLSearchParams({
-        destination,
-        days,
-        averagePrice,
-      });
-      window.location.href = `index2.html?${queryParams}`;
-    }
-  </script>
 
-  <script src="./search.js"></script>
+
+    <!-- SIGN UP -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+
+        // Your web app's Firebase configuration
+        const firebaseConfigg = {
+            apiKey: "AIzaSyCt5PMHdbgsRpGeKSAgrlMeFZthR8jpRE0",
+            authDomain: "makeyourtrip-a355f.firebaseapp.com",
+            projectId: "makeyourtrip-a355f",
+            databaseURL: "https://makeyourtrip-a355f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            storageBucket: "makeyourtrip-a355f.appspot.com",
+            messagingSenderId: "298588605785",
+            appId: "1:298588605785:web:8a3997b0c3b46e1e0f5048",
+            measurementId: "G-6R5GMQD3GP"
+        };
+
+        // Initialize Firebase
+        const appp = initializeApp(firebaseConfigg);
+        const dbb = getDatabase(appp);
+        document.getElementById("sign-up").addEventListener('click', function (e) {
+            e.preventDefault();
+            const user = document.getElementById("username");
+            const email = document.getElementById("emaill");
+            const password = document.getElementById("passwordd");
+            if (email.value !== "" && password.value !== "" && user.value !== "") {
+                set(ref(dbb, 'MordernToolsUsers/' + user.value), {
+                    email: email.value,
+                    password: password.value,
+                }).then(() => {
+                    console.log("Data successfully set on Firebase");
+                    window.location.href = "home.html";
+                }).catch(error => {
+                    console.error("Error setting data:", error);
+                });
+            } else {
+                console.error("Email or password input element not found.");
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>
+
+<!-- const firebaseConfigg = {
+    apiKey: "AIzaSyCt5PMHdbgsRpGeKSAgrlMeFZthR8jpRE0",
+    authDomain: "makeyourtrip-a355f.firebaseapp.com",
+    projectId: "makeyourtrip-a355f",
+    databaseURL: "https://makeyourtrip-a355f-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    storageBucket: "makeyourtrip-a355f.appspot.com",
+    messagingSenderId: "298588605785",
+    appId: "1:298588605785:web:8a3997b0c3b46e1e0f5048",
+    measurementId: "G-6R5GMQD3GP"
+}; -->
